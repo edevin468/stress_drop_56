@@ -92,7 +92,7 @@ b. `~/dataset/RC_beta/`
 3.	Download `event.json` files\
       a.	Enter `~/gmprocess/event_downloads` directory and initialize gmprocess project. \
       b.	Set `config.yml` file downloader to very small radius in degrees (may have to do this more than once, weird stuff goes on with these *.yml files.\
-      c.	Run `>>gmrecords` download.\
+      c.	Run `>>gmrecords download`.\
       d.	This will download event data for each event into its raw folder and an `event.json` file for each event.  All we need from this download is that `event.json` file.  
 4.	Use `cp_eventjson.py` to copy event.json files from `event_downloads` to their corresponding event directory in `~/gmprocess/qa_processing/data`.
 5.	Use `cp_stn_files.py` to copy station `*.xml` files from `~/gmprocess/station_downloads/station_files` into each event raw directory in `~/gmprocess/qa_processing/data`.  
