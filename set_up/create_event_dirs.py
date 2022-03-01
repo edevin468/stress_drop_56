@@ -1,34 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jan 24 10:35:04 2022
+Created on Mon Feb 28 10:35:59 2022
 
 @author: emmadevin
 """
 
-import obspy as op
-from obspy import read
+import pandas as pd
 import os
 import os.path as path
-import glob
-import pandas as pd
 
 
+work_dir = '/Users/emmadevin/Work/USGS_2021/Data_56/'
+out_dir = '/Users/emmadevin/Work/USGS_2021/Data_56/gmprocess/event_downloads/data'
 
-# working directory
-working_dir = '/Users/emmadevin/Work/USGS 2021/Data/Prelim+'
+l = pd.read_csv(work_dir + 'select56cat.txt', sep = ' ',skiprows=24)
 
-# event directories
-event_dirs = glob.glob(working_dir + '/RC_beta/*')
-outpath = '/Users/emmadevin/Work/USGS 2021/Data/gmprocess/qa_processing_test2/data'
+events = l['Event_ID']
 
 
- 
-for event in event_dirs:
-    name = path.basename(event)
-    ev = name.split('/')[-1]
-    print(ev)
-
-    os.makedirs(outpath1 + '/ci'  + ev)
-    
-    
+for event in events:
+    if not path.exists(out_dir + '/ci' + str(event)):
+        os.makedirs(out_dir + '/ci' + str(event))
