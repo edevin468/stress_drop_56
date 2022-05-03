@@ -43,46 +43,7 @@ GIT takes place in `~/dataset_name`
                         |
                         +-- eventid.phase
 ```
-### Locations of code: 
 
-```bash
-        /GitHub/stress_drop/
-                |
-                +-- set_up
-                |	  |
-                |	  +-- cp_event_files.py
-                |	  |
-                |	  +-- cp_eventjson.py
-                |	  |
-                |	  +-- cp_events.py
-                |	  |
-                |	  +-- cp_stn_files.py
-                |  	  |
-                |  	  +-- create_event_dirs.py
-                |  	  |
-                |	  +-- h5_to_mseed.py
-                |
-                +-- station_info
-                |	  |
-                |	  + stations.py
-                |
-                +-- event_info
-                |	  |
-                |	  + event_info.py
-                |	
-                +-- GIT
-                      |
-                      +-- step1_compute_spectra.py
-                      |
-                      +-- step2_secondo_meters.py
-                      |
-                      +-- step3_findBrune_trapezoids.py
-                      |
-                      +-- step4_secondo_constraint.py
-                      |
-                      +-- step5_fitBrune.py
-
-```
 ### STEPS
 
 1.	Use create_event_dirs.py to create event directories for the dataset in both:\
